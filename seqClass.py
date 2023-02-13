@@ -23,6 +23,17 @@ if re.search('^[ACGTU]+$', args.seq):
 else:
     print ('The sequence is not DNA nor RNA')
     
+args.seq = args.seq.upper()                 # Note we just added this line
+if re.search('^[ACGTU]+$', args.seq):
+    if re.search('T', args.seq):
+        print ('The sequence is DNA')
+    elif re.search('U', args.seq):
+        print ('The sequence is RNA')
+    else:
+        print ('The sequence can be DNA or RNA')
+else:
+    print ('The sequence is not DNA nor RNA')
+    
 if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
