@@ -14,6 +14,7 @@ if len(sys.argv) == 1:
 
 args = parser.parse_args()
 
+# Fix the seqClass.py script so that it is able to classify correctly any RNA or DNA sequence.
 args.seq = args.seq.upper()                 # Note we just added this line
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):            # Find a T means we have DNA
