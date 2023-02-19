@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+# First, we import some useful code 
 import sys, re
 from argparse import ArgumentParser
 
@@ -15,9 +16,9 @@ args = parser.parse_args()
 
 args.seq = args.seq.upper()                 # Note we just added this line
 if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
+    if re.search('T', args.seq):            # Find a T means we have DNA
         print ('The sequence is DNA')
-    elif re.search('U', args.seq):
+    elif re.search('U', args.seq):          # Find an U means we have RNA
         print ('The sequence is RNA')
     else:
         print ('The sequence can be DNA or RNA')
